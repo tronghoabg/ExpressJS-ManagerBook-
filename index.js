@@ -64,9 +64,8 @@ app.get("/book/edit/:id", function(req, res) {
 })
 
 //router edit site post
-app.post("/book/edit/", function(req, res) {
-    var info = db.get('books').value()[0]
-    var id = info.id
+app.post("/book/edit/:id/update", function(req, res) {
+    var id = req.params.id
     db.get('books').find({id: id})
         .assign({
             name: req.body.name,
