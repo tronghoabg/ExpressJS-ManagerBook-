@@ -54,7 +54,7 @@ app.get("/book/delete/:id", function(req, res) {
     res.redirect("back");
 })
 
-//router edit book
+//router edit site
 app.get("/book/edit/:id", function(req, res) {
     var id = req.params.id
     var info = db.get('books').find( {id: id}).value()
@@ -62,6 +62,8 @@ app.get("/book/edit/:id", function(req, res) {
         thisbook: info
     })
 })
+
+//router edit site post
 app.post("/book/edit/", function(req, res) {
     var info = db.get('books').value()[0]
     var id = info.id
