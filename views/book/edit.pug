@@ -1,0 +1,13 @@
+h1 Sửa đổi thông tin sách
+table
+    tr  
+        th Tên sách
+        th Thể loại
+    tr
+        td=thisbook.name
+        td=thisbook.description
+h2  Cập nhật
+form(action="/book/edit/" method="POST")
+    input(type="text"  name="name" value=thisbook.name )
+    input(type="text"  name="description" value=thisbook.description)
+    button  OK
