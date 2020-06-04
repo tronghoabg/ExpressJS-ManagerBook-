@@ -1,14 +1,41 @@
 {
   "books": [
     {
-      "name": "đắc nhân tâm",
-      "description": "cuộc sống",
+      "name": "Đắc nhân tâm",
+      "description": "Cuộc sống",
       "id": "W0eAXDO85"
     },
     {
       "name": "Cha dạy con làm giàu",
-      "description": "kinh doanh",
+      "description": "Kinh doanh",
       "id": "H_0M83GhY"
+    },
+    {
+      "name": "Học nấu ăn",
+      "description": "Ẩm thực",
+      "id": "Rq54ZTpoH"
+    },
+    {
+      "name": "Learn JavaScript Head First",
+      "description": "Dev",
+      "id": "ID5W6Aijm"
+    }
+  ],
+  "users": [
+    {
+      "name": "Nguyễn Trọng Hòa",
+      "phone": "0336691996",
+      "id": "_ndPJfYUT"
+    },
+    {
+      "name": "Nguyễn Văn Nam",
+      "phone": "0394522222",
+      "id": "o3Ta12Ed5"
+    },
+    {
+      "name": "Nhat Vuong 2",
+      "phone": "0988888888",
+      "id": "6Kap-Ats3"
     }
   ]
 }

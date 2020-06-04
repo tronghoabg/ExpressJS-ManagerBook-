@@ -1,5 +1,5 @@
 H1 THÊM SÁCH
-form(action="/book/add" method="POST")
+form(action="/books/add" method="POST")
     span    Tên sách
     span &nbsp    
     input(type="text" name="name")
@@ -22,8 +22,8 @@ table
             td=obj.description 
                 span &nbsp
             td
-                a(href="book/edit/" + obj.id) Sửa 
+                a(href="books/edit/" + obj.id) Sửa 
                 span &nbsp               
             td
-                a(href="book/delete/" + obj.id) Xóa 
+                a(href="books/delete/" + obj.id) Xóa 
 a(href="/") HOME PAGE 

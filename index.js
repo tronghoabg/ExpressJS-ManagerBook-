@@ -16,6 +16,8 @@ var db = low(adapter);
 
 db.defaults({books: []})
   .write()
+  db.defaults({users: []})
+  .write()
 // require  short id
 var shortid = require('shortid');
 
@@ -31,40 +33,40 @@ app.get("/", function(req,res) {
     res.render("index")
 })
 
-//router book site
+//router books site
 
-app.get("/book", function(req, res) {
-    res.render('book/index', {
+app.get("/books", function(req, res) {
+    res.render('books/index', {
         books: db.get('books').value()
     });
 })
  
-//router  add book
+//router  add books
 
-app.post("/book/add", function(req, res) {
+app.post("/books/add", function(req, res) {
     req.body.id = shortid.generate();
     db.get('books').push(req.body).write();
     res.redirect("back")
 })
 
-// router delete book
-app.get("/book/delete/:id", function(req, res) {
+// router delete books
+app.get("/books/delete/:id", function(req, res) {
     var id = req.params.id;
     db.get('books').remove({id: id}).write();
     res.redirect("back");
 })
 
 //router edit site
-app.get("/book/edit/:id", function(req, res) {
+app.get("/books/edit/:id", function(req, res) {
     var id = req.params.id
     var info = db.get('books').find( {id: id}).value()
-    res.render("book/edit", {
+    res.render("books/edit", {
         thisbook: info
     })
 })
 
 //router edit site post
-app.post("/book/edit/:id/update", function(req, res) {
+app.post("/books/edit/:id/update", function(req, res) {
     var id = req.params.id
     db.get('books').find({id: id})
         .assign({
@@ -72,5 +74,61 @@ app.post("/book/edit/:id/update", function(req, res) {
             description: req.body.description
         })
         .write();
-    res.redirect("/book");
+    res.redirect("/books");
+})
+
+
+
+
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+
+
+
+
+//router users site
+
+app.get("/users", function(req, res) {
+    res.render('users/index', {
+        users: db.get('users').value()
+    });
+})
+ 
+//router  add users
+
+app.post("/users/add", function(req, res) {
+    req.body.id = shortid.generate();
+    db.get('users').push(req.body).write();
+    res.redirect("back")
+})
+
+// router delete users
+app.get("/users/delete/:id", function(req, res) {
+    var id = req.params.id;
+    db.get('users').remove({id: id}).write();
+    res.redirect("back");
+})
+
+//router edit site
+app.get("/users/edit/:id", function(req, res) {
+    var id = req.params.id
+    var info = db.get('users').find( {id: id}).value()
+    res.render("users/edit", {
+        thisuser: info
+    })
+})
+
+//router edit site post
+app.post("/users/edit/:id/update", function(req, res) {
+    var id = req.params.id
+    db.get('users').find({id: id})
+        .assign({
+            name: req.body.name,
+            phone: req.body.phone
+        })
+        .write();
+    res.redirect("/users");
 })
