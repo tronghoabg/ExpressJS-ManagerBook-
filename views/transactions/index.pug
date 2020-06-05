@@ -1,0 +1,31 @@
+h1 THUÊ SÁCH
+form(action="/transactions/create" method="POST")
+    p Chọn người thuê
+        span &nbsp
+        select(name="userId")
+            each user in listUsers
+                option=user.name
+    p Chọn sách cần thuê
+        span &nbsp
+        select(name="bookId")
+            each book in listBooks
+                option=book.name
+    button  Xác Nhận        
+h1 LỊCH SỬ THUÊ SÁCH
+table
+    tr
+        th Mã giao dịch
+        th Người Thuê
+        th Sách Thuê
+        th Ngày Thuê
+        th Giờ Thuê
+
+    each tranaction in transactions
+        tr
+            td=tranaction.id
+            td=tranaction.userId
+            td=tranaction.bookId
+            td=tranaction.date
+            td=tranaction.time
+br
+a(href="/") HOME PAGE 

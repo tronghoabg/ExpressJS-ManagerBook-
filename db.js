@@ -5,7 +5,8 @@ var db = low(adapter);
 
 db.defaults({books: []})
   .write()
-  db.defaults({users: []})
-  .write();
-
+db.defaults({users: []})
+.write();
+db.defaults({transactions: []})
+.write();
 module.exports = db;

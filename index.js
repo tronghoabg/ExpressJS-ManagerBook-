@@ -3,7 +3,7 @@ var express = require('express');
 
 var userRoutes = require('./routers/user.route');
 var bookRoutes = require('./routers/book.route');
-
+var transactionRoutes = require('./routers/transaction.route');
 var app = express();
 var port = 3000;
 
@@ -12,9 +12,10 @@ app.listen(port, function() {
 });
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use('/users', userRoutes);
 
+app.use('/users', userRoutes);
 app.use('/books', bookRoutes);
+app.use('/transactions', transactionRoutes);
 
 
 // set default folder root for pug
@@ -27,15 +28,3 @@ app.set("views", "./views");
 app.get("/", function(req,res) {
     res.render("index")
 })
-
-//router books site
-
-
-
-
-
-//-----------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
