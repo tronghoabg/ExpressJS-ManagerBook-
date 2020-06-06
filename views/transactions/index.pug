@@ -19,13 +19,17 @@ table
         th Sách Thuê
         th Ngày Thuê
         th Giờ Thuê
-
-    each tranaction in transactions
+        th Trạng Thái
+        th Hoàn thành
+    each transaction in transactions
         tr
-            td=tranaction.id
-            td=tranaction.userId
-            td=tranaction.bookId
-            td=tranaction.date
-            td=tranaction.time
+            td=transaction.id
+            td=transaction.userId
+            td=transaction.bookId
+            td=transaction.date
+            td=transaction.time
+            td=transaction.isCompleted
+            td
+                a(href="transactions/" + transaction.id + "/complete") Hoàn Thành
 br
 a(href="/") HOME PAGE 

@@ -19,14 +19,24 @@
       "name": "Learn JavaScript Head First",
       "description": "DEV",
       "id": "ID5W6Aijm"
+    },
+    {
+      "name": "Doremon",
+      "description": "Truyện tranh",
+      "id": "zE75Pq8Tm"
+    },
+    {
+      "name": "Tấm cám",
+      "description": "Truyện cổ tích",
+      "id": "Xr1qtDqYr"
+    },
+    {
+      "name": "Nhà giả kim",
+      "description": "Cuộc sống",
+      "id": "0YVr2AKlT"
     }
   ],
   "users": [
-    {
-      "name": "Nguyễn Trọng Hòa",
-      "phone": "0336691996",
-      "id": "_ndPJfYUT"
-    },
     {
       "name": "Nguyễn Văn Nam",
       "phone": "0394622222",
@@ -36,6 +46,16 @@
       "name": "Nhat Vuong",
       "phone": "0988888888",
       "id": "6Kap-Ats3"
+    },
+    {
+      "name": "Ràng A Pháo",
+      "phone": "0222222222",
+      "id": "sBRZ26LVm"
+    },
+    {
+      "name": "Lù A Tiến",
+      "phone": "0169334326",
+      "id": "mGJvoFfNB"
     }
   ],
   "transactions": [
@@ -65,7 +85,8 @@
       "bookId": "Cha dạy con làm giàu",
       "date": "5/6/2020",
       "time": "22:59",
-      "id": "K6xmApkJN"
+      "id": "K6xmApkJN",
+      "isCompleted": true
     },
     {
       "userId": "Nguyễn Văn Nam",
@@ -80,6 +101,29 @@
       "date": "5/6/2020",
       "time": "23:0",
       "id": "5NsbW78pi"
+    },
+    {
+      "userId": "Ràng A Pháo",
+      "bookId": "Doremon",
+      "date": "5/6/2020",
+      "time": "23:10",
+      "id": "0k85D-gR1",
+      "isCompleted": true
+    },
+    {
+      "userId": "Lù A Tiến",
+      "bookId": "Tấm cám",
+      "date": "5/6/2020",
+      "time": "23:10",
+      "id": "1Cr0Jwc6Y"
+    },
+    {
+      "userId": "Ràng A Pháo",
+      "bookId": "Nhà giả kim",
+      "date": "6/6/2020",
+      "time": "23:18",
+      "id": "zylGzj_mk",
+      "isCompleted": true
     }
   ]
 }
