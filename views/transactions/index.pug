@@ -1,35 +1,36 @@
-h1 THUÊ SÁCH
-form(action="/transactions/create" method="POST")
-    p Chọn người thuê
-        span &nbsp
-        select(name="userId")
-            each user in listUsers
-                option=user.name
-    p Chọn sách cần thuê
-        span &nbsp
-        select(name="bookId")
-            each book in listBooks
-                option=book.name
-    button  Xác Nhận        
-h1 LỊCH SỬ THUÊ SÁCH
-table
-    tr
-        th Mã giao dịch
-        th Người Thuê
-        th Sách Thuê
-        th Ngày Thuê
-        th Giờ Thuê
-        th Trạng Thái
-        th Hoàn thành
-    each transaction in transactions
+extends ../layouts/common.pug
+
+block content 
+    h1 THUÊ SÁCH
+    form(action="/transactions/create" method="POST")
+        label Chọn người thuê
+            select(name="userId" class="form-control")
+                each user in listUsers
+                    option=user.name
+        label(class="ml-4") Chọn sách cần thuê
+            select(name="bookId" class="form-control")
+                each book in listBooks
+                    option=book.name
+        br
+        button(class="btn btn-primary")  Xác Nhận        
+    h1 LỊCH SỬ THUÊ SÁCH
+    table(class="table")
         tr
-            td=transaction.id
-            td=transaction.userId
-            td=transaction.bookId
-            td=transaction.date
-            td=transaction.time
-            td=transaction.isCompleted
-            td
-                a(href="transactions/" + transaction.id + "/complete") Hoàn Thành
-br
-a(href="/") HOME PAGE 
+            th Mã giao dịch
+            th Người Thuê
+            th Sách Thuê
+            th Ngày Thuê
+            th Giờ Thuê
+            th Trạng Thái
+            th Hoàn thành
+        each transaction in transactions
+            tr
+                td=transaction.id
+                td=transaction.userId
+                td=transaction.bookId
+                td=transaction.date
+                td=transaction.time
+                td=transaction.isCompleted
+                td
+                    a(href="transactions/" + transaction.id + "/complete") Hoàn Thành
+    br

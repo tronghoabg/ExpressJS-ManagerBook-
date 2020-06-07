@@ -1,13 +1,16 @@
-h1 Sửa đổi thông tin user
-table
-    tr  
-        th NAME
-        th SDT
-    tr
-        td=thisuser.name
-        td=thisuser.phone
-h2  Cập nhật
-form(action="/users/edit/" + thisuser.id + "/update" method="POST")
-    input(type="text"  name="name" value=thisuser.name )
-    input(type="text"  name="phone" value=thisuser.phone)
-    button  OK
+extends ../layouts/common.pug
+
+block content 
+    h1 Sửa đổi thông tin user
+    table(class="table")
+        tr  
+            th NAME
+            th SDT
+        tr
+            td=thisuser.name
+            td=thisuser.phone
+    h2  Cập nhật
+    form(action="/users/edit/" + thisuser.id + "/update" method="POST")
+        input(type="text"  name="name" value=thisuser.name class="form-control mb-3")
+        input(type="text"  name="phone" value=thisuser.phone  class="form-control mb-3")
+        button(class="btn btn-primary")  OK

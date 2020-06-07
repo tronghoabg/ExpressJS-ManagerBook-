@@ -1,13 +1,16 @@
-h1 Sửa đổi thông tin sách
-table
-    tr  
-        th Tên sách
-        th Thể loại
-    tr
-        td=thisbook.name
-        td=thisbook.description
-h2  Cập nhật
-form(action="/books/edit/" + thisbook.id + "/update" method="POST")
-    input(type="text"  name="name" value=thisbook.name )
-    input(type="text"  name="description" value=thisbook.description)
-    button  OK
+extends ../layouts/common.pug
+
+block content   
+    h1 Sửa đổi thông tin sách
+    table(class="table")
+        tr  
+            th Tên sách
+            th Thể loại
+        tr
+            td=thisbook.name
+            td=thisbook.description
+    h2  Cập nhật
+    form(action="/books/edit/" + thisbook.id + "/update" method="POST" class="form")
+        input(type="text"  name="name" value=thisbook.name class="form-control mb-3" )
+        input(type="text"  name="description" value=thisbook.description class="form-control mb-3")
+        button(class="btn btn-primary")  OK
