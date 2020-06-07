@@ -17,6 +17,8 @@ app.use('/users', userRoutes);
 app.use('/books', bookRoutes);
 app.use('/transactions', transactionRoutes);
 
+app.use("/public", express.static('public'));
+
 
 // set default folder root for pug
 app.set("view engine", "pug");
@@ -28,3 +30,4 @@ app.set("views", "./views");
 app.get("/", function(req,res) {
     res.render("index")
 })
+
