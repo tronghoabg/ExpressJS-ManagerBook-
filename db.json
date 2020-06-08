@@ -43,7 +43,7 @@
       "id": "o3Ta12Ed5"
     },
     {
-      "name": "Nhat Vuong",
+      "name": "Nhật Vượng",
       "phone": "0988888888",
       "id": "6Kap-Ats3"
     },
@@ -56,6 +56,36 @@
       "name": "Lù A Tiến",
       "phone": "0169334326",
       "id": "mGJvoFfNB"
+    },
+    {
+      "name": "Nguyễn Văn Thóc",
+      "phone": "0989999999",
+      "id": "eFEP_A-Tu"
+    },
+    {
+      "name": "Khá Lửng",
+      "phone": "0354123694",
+      "id": "Rey_3pl0_"
+    },
+    {
+      "name": "Nguyễn Thị Còn Trinh",
+      "phone": "0354555555",
+      "id": "mhRnH_vz2"
+    },
+    {
+      "name": "Lù A Cú",
+      "phone": "0988888888",
+      "id": "eAXS0rJNW"
+    },
+    {
+      "name": "Nguyễn Văn Tèo",
+      "phone": "0354665454",
+      "id": "eEu1ajTR9"
+    },
+    {
+      "name": "Phạm Vặt Thật Thà",
+      "phone": "0123999544",
+      "id": "xfoWYhIJG"
     }
   ],
   "transactions": [
@@ -71,14 +101,16 @@
       "bookId": "Cha dạy con làm giàu",
       "date": "5/6/2020",
       "time": "22:58",
-      "id": "UPIgLF6UI"
+      "id": "UPIgLF6UI",
+      "isCompleted": true
     },
     {
       "userId": "Nguyễn Văn Nam",
       "bookId": "Cha dạy con làm giàu",
       "date": "5/6/2020",
       "time": "22:58",
-      "id": "ag6JfD9RB"
+      "id": "ag6JfD9RB",
+      "isCompleted": true
     },
     {
       "userId": "Nguyễn Văn Nam",

@@ -2,14 +2,14 @@ extends ../layouts/common.pug
 
 block content 
     H1 ADD USER
+    if error
+        each err in error
+            .alert.alert-danger=err
     form(action="/users/add" method="POST")
-        span    NAME
-        span &nbsp    
-        input(type="text" name="name" class="form-control mb-3")
-        
-        span   SDT
-        span &nbsp    
-        input(type="text" name="phone" class="form-control mb-3")
+        lable    NAME
+        input(type="text" name="name" class="form-control mb-3" value=values ? values.name : "")
+        lable   SDT
+        input(type="text" name="phone" class="form-control mb-3" value=values ? values.phone : "")
         span &nbsp
         button(class="btn btn-primary") Add
     h1  Thông Tin User

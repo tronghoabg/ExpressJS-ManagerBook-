@@ -20,11 +20,15 @@ module.exports.postCreate =  function(req, res) {
 
 module.exports.complete = function(req, res) {
     var id = req.params.id;
-    db.get('transactions').find( {id: id})
+    var check =  db.get('transactions').find( {id: id}).value()
+    if (!check) {
+        res.send('Không tồn tại id này')
+    }{
+        db.get('transactions').find( {id: id})
         .assign({
             isCompleted: true
         })
         .write();
     res.redirect('/transactions');
-
+    }
 }
