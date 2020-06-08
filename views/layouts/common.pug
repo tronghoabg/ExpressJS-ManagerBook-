@@ -2,7 +2,22 @@ html
     head
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous")
         link(rel="icon" href="../public/icon.png")
+        link(rel="stylesheet" href="../public/css/custom.css")
     body
+        .container
+            nav.navbar.navbar-dark.bg-dark
+                a(href="/" class="nav-item") 
+                  img(src="../public/image/logo.png", alt="")
+                ul.navbar-nav.flex-row
+                    li(class="nav-item ml-5")
+                        a(href="/books" class="nav-link") BOOKS
+                    li(class="nav-item ml-5")
+                        a(href="users" class="nav-link") USERS
+                    li(class="nav-item ml-5")
+                        a(href="transactions" class="nav-link") TRANSACTIONS
         div(class="container")
             block content
-            a(href="/" class="btn btn-success") HOME PAGE 
+           
+                                
+
+                                    
