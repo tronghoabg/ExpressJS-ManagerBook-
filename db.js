@@ -9,4 +9,7 @@ db.defaults({users: []})
 .write();
 db.defaults({transactions: []})
 .write();
+db.defaults({cookie: []})
+.write();
+
 module.exports = db;

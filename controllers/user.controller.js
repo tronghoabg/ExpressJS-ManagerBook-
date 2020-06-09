@@ -29,6 +29,7 @@ module.exports.edit = function(req, res) {
 
 module.exports.postEdit =  function(req, res) {
     var id = req.params.id
+
     db.get('users').find({id: id})
         .assign({
             name: req.body.name,
