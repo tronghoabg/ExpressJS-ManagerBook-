@@ -19,7 +19,7 @@
   "users": [
     {
       "userId": "admin",
-      "password": "123",
+      "password": "$2b$10$SH2CvX/PIWl56mTgjOCJReeS4RfyZqniBcq7KtVAyGA/I.WwPx/hy",
       "isAdmin": true,
       "name": "ADMIN",
       "phone": "0336691996",
@@ -27,7 +27,7 @@
     },
     {
       "userId": "r.aphao",
-      "password": "123",
+      "password": "$2b$10$SH2CvX/PIWl56mTgjOCJReeS4RfyZqniBcq7KtVAyGA/I.WwPx/hy",
       "isAdmin": false,
       "name": "Ràng A Pháo",
       "phone": "0336691996",
@@ -35,7 +35,7 @@
     },
     {
       "userId": "nt.conzin",
-      "password": "123",
+      "password": "$2b$10$SH2CvX/PIWl56mTgjOCJReeS4RfyZqniBcq7KtVAyGA/I.WwPx/hy",
       "isAdmin": false,
       "name": "Nguyễn Thị Còn Zin",
       "phone": "0125423485",
@@ -43,7 +43,7 @@
     },
     {
       "userId": "nt.contem",
-      "password": "123",
+      "password": "$2b$10$SH2CvX/PIWl56mTgjOCJReeS4RfyZqniBcq7KtVAyGA/I.WwPx/hy",
       "isAdmin": false,
       "name": "Nguyễn Thị Còn Tem",
       "phone": "013548574",
@@ -97,5 +97,15 @@
       "isCompleted": false
     }
   ],
-  "cookie": []
+  "cookie": [],
+  "wrongLoginCount": [
+    {
+      "userId": "admin",
+      "count": 2
+    },
+    {
+      "userId": "nv.nam",
+      "count": 10
+    }
+  ]
 }
