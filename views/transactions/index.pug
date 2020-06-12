@@ -4,11 +4,11 @@ block content
     h1 THUÊ SÁCH
     form(action="/transactions/create" method="POST")
         label Chọn người thuê
-            select(name="userId" class="form-control")
+            select(name="name" class="form-control")
                 each user in listUsers
                     option=user.name
         label(class="ml-4") Chọn sách cần thuê
-            select(name="bookId" class="form-control")
+            select(name="book" class="form-control")
                 each book in listBooks
                     option=book.name
         br
@@ -17,17 +17,17 @@ block content
     table(class="table")
         tr
             th Mã giao dịch
-            th Người Thuê
+            th Người Thuê 
             th Sách Thuê
             th Ngày Thuê
             th Giờ Thuê
             th Trạng Thái
-            th Hoàn thành
+            th Hành động
         each transaction in transactions
             tr
                 td=transaction.id
-                td=transaction.userId
-                td=transaction.bookId
+                td=transaction.name
+                td=transaction.book
                 td=transaction.date
                 td=transaction.time
                 td=transaction.isCompleted

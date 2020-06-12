@@ -1,0 +1,13 @@
+extends ../layouts/common.pug
+block content
+    h1 Đăng Nhập
+    if error
+        each err in error
+            .alert.alert-danger=err
+    form(action="/auth/login" method="POST")
+        lable Account   
+        input(type="user" name="userId" class="form-control mb-3" value=values ? values.userId : "")
+        lable   Password
+        input(type="password" name="password" class="form-control mb-3" value=values ? values.password : "")
+        span &nbsp
+        button(class="btn btn-primary") Add

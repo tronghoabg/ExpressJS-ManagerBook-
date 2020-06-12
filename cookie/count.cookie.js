@@ -10,6 +10,5 @@ module.exports.countCookie = function(req, res, next) {
         }).write();
         
     console.log(count);
-
     next();
 }
