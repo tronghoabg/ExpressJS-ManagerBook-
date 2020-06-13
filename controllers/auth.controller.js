@@ -11,24 +11,28 @@ module.exports.postLogin = function(req, res) {
     var password = req.body.password;  
     var user = db.get('users').find({userId: userId}).value();
 
-    var saltRounds = 10;    
-    if(user){
-        var countWrong = db.get('wrongLoginCount').find({userId: userId}).value().count
-        if(countWrong >= 6) {
-            res.render('auth/login', {
-                error: ['bạn đã nhập sai mật khẩu! ' + countWrong + ' lần !!!'],
-                values: req.body
-            })
-        }
-        var check = bcrypt.compareSync(password, user.password)
-    }
-
     if(!user){
         res.render('auth/login', {
             error: ['user dose not exits!'],
             values: req.body
         })
     }
+
+    if(user){
+        var countWrong = db.get('wrongLoginCount').find({userId: userId}).value()
+            if(countWrong) {
+                if(countWrong >= 6) {
+                    res.render('auth/login', {
+                        error: ['bạn đã nhập sai mật khẩu! ' + countWrong.count + ' lần !!!'],
+                        values: req.body
+                    })
+                }
+            }
+    }
+
+            
+    var saltRounds = 10;    
+    var check = bcrypt.compareSync(password, user.password)
 
     if(!check){
         var userBody = {
@@ -49,6 +53,8 @@ module.exports.postLogin = function(req, res) {
             values: req.body
         })
     } 
-    res.cookie('id', user.id)
+    res.cookie('id', user.id, {
+        signed: true
+    })
     res.redirect('/users')
 }

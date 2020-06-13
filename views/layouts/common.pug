@@ -16,9 +16,13 @@ html
                         a(href="/users" class="nav-link") USERS
                     li(class="nav-item ml-5")
                         a(href="/transactions" class="nav-link") TRANSACTIONS
-                    li(class="nav-item ml-5")
-                        a(href="/auth/login" class="nav-link") LOGIN
-                    
+                    if !user    
+                        li(class="nav-item ml-5")
+                            a(href="/auth/login" class="nav-link") LOGIN
+                    if user
+                        li(class="nav-item ml-5")
+                            a(class="nav-link")=user.name
+
         div(class="container")
             block content
            

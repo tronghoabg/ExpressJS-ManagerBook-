@@ -12,7 +12,7 @@ var app = express();
 
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cookieparser());
+app.use(cookieparser('dfaskj2io3jer3ikrmnwe'));
  
 app.use('/users',middlewareAuth.requireAuth, middlewareAuth.logged, userRoutes);
 app.use('/books', middlewareAuth.requireAuth, middlewareAuth.logged, bookRoutes);
