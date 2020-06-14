@@ -1,4 +1,5 @@
 // require express
+require('dotenv').config();
 var express = require('express');
 var cookieparser = require('cookie-parser'); 
 var userRoutes = require('./routers/user.route');
@@ -12,7 +13,7 @@ var app = express();
 
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cookieparser('dfaskj2io3jer3ikrmnwe'));
+app.use(cookieparser(process.env.SESSION_SECRET));
  
 app.use('/users',middlewareAuth.requireAuth, middlewareAuth.logged, userRoutes);
 app.use('/books', middlewareAuth.requireAuth, middlewareAuth.logged, bookRoutes);
