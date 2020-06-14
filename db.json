@@ -119,7 +119,7 @@
   "wrongLoginCount": [
     {
       "userId": "admin",
-      "count": 5
+      "count": 7
     },
     {
       "userId": "nv.nam",

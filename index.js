@@ -1,5 +1,4 @@
 // require express
-require('dotenv').config();
 var express = require('express');
 var cookieparser = require('cookie-parser'); 
 var userRoutes = require('./routers/user.route');
@@ -8,7 +7,6 @@ var transactionRoutes = require('./routers/transaction.route');
 var cookie = require('./cookie/count.cookie');
 var loginRoutes = require('./routers/auth.route');
 var middlewareAuth = require('./middlewares/auth.middleware')
-
 var app = express();
 
 app.use(express.json()); // for parsing application/json
@@ -37,3 +35,4 @@ var port = 3000;
 app.listen(port, function() {
     console.log('Server is started at link  http://localhost:' + port)
 });  
+
