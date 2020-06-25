@@ -1,0 +1,19 @@
+extends ../layouts/common.pug
+
+block content
+    h1 Trang Cá Nhân
+    .container
+        div.d-flex.align-items-center(width="500")
+            div
+                img(src=user.avatar alt="..." class="img-thumbnail mr-5" width="200")
+                a(href="/profile/avatar" class="btn btn-primary mr-5") Sửa ảnh đại diện
+            ul.list-group
+                li.list-group-item="User-Id: " + user.userId
+                li.list-group-item="Họ Và Tên: " + user.name
+                li.list-group-item="Số ĐiệnThoại: " +user.phone
+                li.list-group-item="isAdmin: " + user.isAdmin
+    h1 Cập nhật
+        form(action="/profile/" + user.id + "/update" method="POST")
+            input(type="text"  name="name" value=user.name class="form-control mb-3")
+            input(type="text"  name="phone" value=user.phone  class="form-control mb-3")
+            button(class="btn btn-primary")  OK

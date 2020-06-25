@@ -24,11 +24,8 @@ module.exports.postLogin = function(req, res) {
     if(user){
         var countWrong = db.get('wrongLoginCount').find({userId: userId}).value()
             if(countWrong) {
-                if(countWrong.count >= 6) {
-                    
+                if(countWrong.count >= 6) {       
                     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-                    console.log(process.env.SENDGRID_API_KEY);
-                    
                     var msg = {
                         to: "tronghoabg@gmail.com",
                         from: "tronghoabg@gmail.com",
@@ -36,9 +33,7 @@ module.exports.postLogin = function(req, res) {
                         text: "Ai đó đang cố gắng đang nhập vào tài khoản của bạn, hoặc bạn nhập khẩu sai quá nhiều lần!!!",
                         html: "<h1>Cảnh Báo</h1><p>Ai đó đang cố gắng đang nhập vào tài khoản của bạn, hoặc bạn nhập khẩu sai quá nhiều lần!!!</p>"
                     }
-                    
                     sgMail.send(msg);
-
                     res.render('auth/login', {
                         error: ['bạn đã nhập sai mật khẩu! ' + countWrong.count + ' lần !!!'],
                         values: req.body
@@ -46,8 +41,6 @@ module.exports.postLogin = function(req, res) {
                 }
             }
     }
-
-            
     var saltRounds = 10;    
     var check = bcrypt.compareSync(password, user.password)
 

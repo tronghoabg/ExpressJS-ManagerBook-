@@ -23,7 +23,8 @@
       "isAdmin": true,
       "name": "ADMIN",
       "phone": "0336691996",
-      "id": "zhuiMxFk3"
+      "id": "zhuiMxFk3",
+      "avatar": "/public/image/avatar.jpg"
     },
     {
       "userId": "r.aphao",
@@ -31,7 +32,8 @@
       "isAdmin": false,
       "name": "Ràng A Pháo",
       "phone": "0336691996",
-      "id": "zhuiMxFky"
+      "id": "zhuiMxFky",
+      "avatar": "/public/image/avatar.jpg"
     },
     {
       "userId": "nt.conzin",
@@ -39,7 +41,8 @@
       "isAdmin": false,
       "name": "Nguyễn Thị Còn Zin",
       "phone": "0125423485",
-      "id": "GzfdNEAgr"
+      "id": "GzfdNEAgr",
+      "avatar": "/public/image/avatar.jpg"
     },
     {
       "userId": "nt.contem",
@@ -47,7 +50,8 @@
       "isAdmin": false,
       "name": "Nguyễn Thị Còn Tem",
       "phone": "013548574",
-      "id": "OWBy2U0-J"
+      "id": "OWBy2U0-J",
+      "avatar": "/public/image/avatar.jpg"
     }
   ],
   "transactions": [
@@ -119,7 +123,7 @@
   "wrongLoginCount": [
     {
       "userId": "admin",
-      "count": 1
+      "count": 2
     },
     {
       "userId": "nv.nam",

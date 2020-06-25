@@ -1,0 +1,11 @@
+extends ../layouts/common.pug
+
+block content
+    h1=user.name
+    .container
+        div.d-flex.align-items-center(width="500")
+            img(src=user.avatar alt="..." class="img-thumbnail mr-5" width="200")
+    h3 Thay đổi ảnh đại diện
+    form(action="/profile/avatar/upload" method="POST")
+        input.form-control.mb-3(type="file" name="avatar")
+        button.btn.btn-primary Đổi ảnh

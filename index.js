@@ -7,7 +7,7 @@ var transactionRoutes = require('./routers/transaction.route');
 var cookie = require('./cookie/count.cookie');
 var loginRoutes = require('./routers/auth.route');
 var productRoutes = require('./routers/product.route');
-
+var profileRoutes = require('./routers/profile.route');
 var middlewareAuth = require('./middlewares/auth.middleware');
 var app = express();
 
@@ -20,6 +20,7 @@ app.use('/books', middlewareAuth.requireAuth, middlewareAuth.logged, bookRoutes)
 app.use('/transactions', middlewareAuth.requireAuth, middlewareAuth.logged, transactionRoutes);
 app.use('/auth', loginRoutes); 
 app.use('/products', productRoutes); 
+app.use('/profile', profileRoutes);
 app.use("/public", express.static('public')); 
 
 // set default folder root for pug
