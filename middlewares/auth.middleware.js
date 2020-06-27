@@ -12,9 +12,4 @@ module.exports.requireAuth = function(req, res, next) {
     }
     res.locals.user = user
     next()
-};
-
-module.exports.logged = function(req, res, next) {
-
-    next()
 }

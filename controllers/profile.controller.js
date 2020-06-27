@@ -26,14 +26,20 @@ module.exports.avatar = function(req, res) {
         user: user
     })
 }
-
 module.exports.avatarPost = function(req, res) {
-    
-    cloudinary.config({
-        cloud_name: process.env.cloud_name,
-        api_key: process.env.api_key,
-        api_secret: process.env.api_secret
+    var id = req.signedCookies.id
+    cloudinary.config({ 
+        cloud_name: process.env.CLOUND_NAME, 
+        api_key: process.env.API_KEY, 
+        api_secret: process.env.API_SECRET
     });
-    cloudinary.uploader.upload(req.body.avatar, function(error, result) {console.log(result, error)});
-    res.redirect('/profile/avatar')
+    cloudinary.uploader.upload(req.file.path, function(error, result){
+        var newPath = result.url;
+        db.get('users').find({id: id})
+        .assign({
+            avatar: newPath
+        })
+        .write();
+    });
+    res.redirect('/profile')
 }

@@ -6,7 +6,7 @@ var middlerwares = require('../middlewares/auth.middleware');
 
 var validate = require('../validate/user.validate');
 
-router.get('/login', middlerwares.logged, controller.login);
+router.get('/login', controller.login);
 
 router.post('/login', controller.postLogin);
 

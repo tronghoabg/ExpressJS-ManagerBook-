@@ -9,17 +9,22 @@ var loginRoutes = require('./routers/auth.route');
 var productRoutes = require('./routers/product.route');
 var profileRoutes = require('./routers/profile.route');
 var middlewareAuth = require('./middlewares/auth.middleware');
+const bodyParser = require('body-parser');
 var app = express();
 
-app.use(express.json()); // for parsing application/json
-app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+// app.use(express.json()); // for parsing application/json
+// app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieparser(process.env.SESSION_SECRET));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
  
-app.use('/users',middlewareAuth.requireAuth, middlewareAuth.logged, userRoutes);
-app.use('/books', middlewareAuth.requireAuth, middlewareAuth.logged, bookRoutes);
-app.use('/transactions', middlewareAuth.requireAuth, middlewareAuth.logged, transactionRoutes);
+app.use('/users',middlewareAuth.requireAuth, userRoutes);
+app.use('/books', middlewareAuth.requireAuth, bookRoutes);
+app.use('/transactions', middlewareAuth.requireAuth, transactionRoutes);
 app.use('/auth', loginRoutes); 
-app.use('/products', productRoutes); 
+app.use('/products', middlewareAuth.requireAuth, productRoutes); 
 app.use('/profile', profileRoutes);
 app.use("/public", express.static('public')); 
 
@@ -30,7 +35,7 @@ app.set("views", "./views"); // em co 1 cai browser plugin nao do no fetch cai r
 // vang 
 
 
-app.get("/", middlewareAuth.requireAuth, middlewareAuth.logged, function(req,res) {
+app.get("/", middlewareAuth.requireAuth, function(req,res) {
     res.render("index")
 });
 
