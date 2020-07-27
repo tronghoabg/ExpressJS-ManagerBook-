@@ -19,7 +19,7 @@
   "users": [
     {
       "userId": "admin",
-      "password": "$2b$10$SH2CvX/PIWl56mTgjOCJReeS4RfyZqniBcq7KtVAyGA/I.WwPx/hy",
+      "password": "$2b$10$gjTdfhFn.JHxW4yvHdV6dOS0bc/xSEADznlsVoZJgAPrQKO/Zu1pi",
       "isAdmin": true,
       "name": "ADMIN",
       "phone": "0336691996",
@@ -28,7 +28,7 @@
     },
     {
       "userId": "r.aphao",
-      "password": "$2b$10$SH2CvX/PIWl56mTgjOCJReeS4RfyZqniBcq7KtVAyGA/I.WwPx/hy",
+      "password": "$2b$10$gjTdfhFn.JHxW4yvHdV6dOS0bc/xSEADznlsVoZJgAPrQKO/Zu1pi",
       "isAdmin": false,
       "name": "Ràng A Pháo",
       "phone": "0336691996",
@@ -37,7 +37,7 @@
     },
     {
       "userId": "nt.conzin",
-      "password": "$2b$10$SH2CvX/PIWl56mTgjOCJReeS4RfyZqniBcq7KtVAyGA/I.WwPx/hy",
+      "password": "$2b$10$gjTdfhFn.JHxW4yvHdV6dOS0bc/xSEADznlsVoZJgAPrQKO/Zu1pi",
       "isAdmin": false,
       "name": "Nguyễn Thị Còn Zin",
       "phone": "0125423485",
@@ -46,7 +46,7 @@
     },
     {
       "userId": "nt.contem",
-      "password": "$2b$10$SH2CvX/PIWl56mTgjOCJReeS4RfyZqniBcq7KtVAyGA/I.WwPx/hy",
+      "password": "$2b$10$gjTdfhFn.JHxW4yvHdV6dOS0bc/xSEADznlsVoZJgAPrQKO/Zu1pi",
       "isAdmin": false,
       "name": "Nguyễn Thị Còn Tem",
       "phone": "013548574",
@@ -123,11 +123,19 @@
   "wrongLoginCount": [
     {
       "userId": "admin",
-      "count": 2
+      "count": 3
     },
     {
       "userId": "nv.nam",
       "count": 10
+    },
+    {
+      "userId": "nt.contem",
+      "count": 2
+    },
+    {
+      "userId": "nt.conzin",
+      "count": 3
     }
   ],
   "products": [

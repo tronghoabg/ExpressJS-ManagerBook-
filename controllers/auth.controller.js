@@ -42,6 +42,9 @@ module.exports.postLogin = function(req, res) {
             }
     }
     var saltRounds = 10;    
+
+    const hash = bcrypt.hashSync(password, saltRounds);
+    console.log(hash)
     var check = bcrypt.compareSync(password, user.password)
 
     if(!check){
@@ -53,10 +56,10 @@ module.exports.postLogin = function(req, res) {
         if (!user) {
             db.get('wrongLoginCount').push(userBody).write();
         }else{
-            db.get('wrongLoginCount').find({userId: userBody.userId})
-            .assign( {
-                count: user.count + 1
-            }).write()
+            // db.get('wrongLoginCount').find({userId: userBody.userId})
+            // .assign( {
+            //     count: user.count + 1
+            // }).write()
         }
         res.render('auth/login', {
             error: ['Wrong password!'],
