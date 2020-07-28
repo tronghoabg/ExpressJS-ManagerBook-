@@ -10,9 +10,10 @@ module.exports.index = function(req, res) {
     var page = parseInt(req.query.page) || 1;
     var start = (page-1) * 8;
     var end = page * 8
+    var sessionId = req.signedCookies.sessionId;
     res.render('products/index', {
         products: db.get('products').value().slice(start,end),
         nPage: nPage,
-        pageCurrent: parseInt(req.query.page)
+        pageCurrent: parseInt(req.query.page),
     })
 }

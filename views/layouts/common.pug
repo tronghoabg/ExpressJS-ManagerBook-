@@ -5,25 +5,29 @@ html
         link(rel="stylesheet" href="../public/css/custom.css")
         title   Books Manager
     body
-        .container
+        .containera
             nav.navbar.navbar-dark.bg-dark
                 a(href="/" class="nav-item") 
                   img(src="../public/image/logo.png", alt="")
-                ul.navbar-nav.flex-row
-                    li(class="nav-item ml-5")
-                        a(href="/books" class="nav-link") BOOKS
-                    li(class="nav-item ml-5")
-                        a(href="/users" class="nav-link") USERS
-                    li(class="nav-item ml-5")
-                        a(href="/transactions" class="nav-link") TRANSACTIONS
-                    li.nav-item.ml-5
-                        a(href="/products" class="nav-link") PRODUCTS
-                    if !user    
-                        li(class="nav-item ml-5")
-                            a(href="/auth/login" class="nav-link") LOGIN
-                    if user
-                        li(class="nav-item ml-5")
-                            a(href="/profile" class="nav-link")=user.name
+                div
+                    ul.navbar-nav.d-flex.flex-row
+                        li(class="nav-item ml-2")
+                            a(href="/books" class="nav-link") BOOKS
+                        li(class="nav-item ml-3")
+                            a(href="/users" class="nav-link") USERS
+                        li(class="nav-item ml-3")
+                            a(href="/transactions" class="nav-link") TRANSACTIONS
+                        li.nav-item.ml-3
+                            a(href="/products" class="nav-link") PRODUCTS
+                        li.nav-item.ml-3
+                        if cart
+                            a(href="/products" class="nav-link")="CART( " + cart + " )"
+                        if !user    
+                            li(class="nav-item ml-3")
+                                a(href="/auth/login" class="nav-link") LOGIN
+                        if user
+                            li(class="nav-item ml-3")
+                                a(href="/profile" class="nav-link")=user.name
         div(class="container")
             block content
            

@@ -9,6 +9,8 @@ var loginRoutes = require('./routers/auth.route');
 var productRoutes = require('./routers/product.route');
 var profileRoutes = require('./routers/profile.route');
 var middlewareAuth = require('./middlewares/auth.middleware');
+var sessionMiddleware = require('./middlewares/session.middleware');
+var cartRoute = require('./routers/cart.route')
 const bodyParser = require('body-parser');
 var app = express();
 
@@ -17,17 +19,17 @@ var app = express();
 app.use(cookieparser(process.env.SESSION_SECRET));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(sessionMiddleware, sessionMiddleware.checkCart);
 
  
 app.use('/users',middlewareAuth.requireAuth, userRoutes);
 app.use('/books', middlewareAuth.requireAuth, bookRoutes);
 app.use('/transactions', middlewareAuth.requireAuth, transactionRoutes);
 app.use('/auth', loginRoutes); 
-app.use('/products', middlewareAuth.requireAuth, productRoutes); 
+app.use('/products', productRoutes); 
 app.use('/profile', profileRoutes);
 app.use("/public", express.static('public')); 
-
+app.use('/cart', cartRoute);
 // set default folder root for pug
 app.set("view engine", "pug");
 app.set("views", "./views"); // em co 1 cai browser plugin nao do no fetch cai request thu 2

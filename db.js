@@ -11,5 +11,7 @@ db.defaults({transactions: []})
 .write();
 db.defaults({cookie: []})
 .write();
+db.defaults({sessions: []})
+.write();
 
 module.exports = db;
