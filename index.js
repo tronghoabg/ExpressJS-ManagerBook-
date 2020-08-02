@@ -1,4 +1,3 @@
-// require express
 var express = require('express');
 var cookieparser = require('cookie-parser'); 
 var userRoutes = require('./routers/user.route');
@@ -11,17 +10,19 @@ var profileRoutes = require('./routers/profile.route');
 var middlewareAuth = require('./middlewares/auth.middleware');
 var sessionMiddleware = require('./middlewares/session.middleware');
 var cartRoute = require('./routers/cart.route')
-const bodyParser = require('body-parser');
-var app = express();
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URL,  {
+     useNewUrlParser: true,
+     useUnifiedTopology: true 
+     });
 
-// app.use(express.json()); // for parsing application/json
-// app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+var app = express();
 app.use(cookieparser(process.env.SESSION_SECRET));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(sessionMiddleware, sessionMiddleware.checkCart);
 
- 
 app.use('/users',middlewareAuth.requireAuth, userRoutes);
 app.use('/books', middlewareAuth.requireAuth, bookRoutes);
 app.use('/transactions', middlewareAuth.requireAuth, transactionRoutes);
@@ -32,10 +33,7 @@ app.use("/public", express.static('public'));
 app.use('/cart', cartRoute);
 // set default folder root for pug
 app.set("view engine", "pug");
-app.set("views", "./views"); // em co 1 cai browser plugin nao do no fetch cai request thu 2
-// thu disable tung extension xem tim ra thu pham roi nhe
-// vang 
-
+app.set("views", "./views"); 
 
 app.get("/", middlewareAuth.requireAuth, function(req,res) {
     res.render("index")

@@ -2,15 +2,15 @@ extends ../layouts/common.pug
 block content
     h1.m-5 Shop Thú cưng
     div.container
-        nav(aria-label='Page navigation example')
-            ul.pagination.justify-content-center
-                li.page-item
-                a.page-link(href=pageCurrent? 'products?page=' + (pageCurrent - 1) : '#' ) Previous
-                each n in nPage
-                    li.page-item
-                        a.page-link(href='products?page=' + (nPage.indexOf(n) + 1))=nPage.indexOf(n) + 1
-                li.page-item
-                a.page-link(href=pageCurrent ? 'products?page=' + (pageCurrent + 1) : 'products?page=2') Next
+        //- nav(aria-label='Page navigation example')
+        //-     ul.pagination.justify-content-center
+        //-         li.page-item
+        //-         a.page-link(href=pageCurrent? 'products?page=' + (pageCurrent - 1) : '#' ) Previous
+        //-         each n in nPage
+        //-             li.page-item
+        //-                 a.page-link(href='products?page=' + (nPage.indexOf(n) + 1))=nPage.indexOf(n) + 1
+        //-         li.page-item
+        //-         a.page-link(href=pageCurrent ? 'products?page=' + (pageCurrent + 1) : 'products?page=2') Next
 
         div(class="d-flex justify-content-center flex-wrap")
         
@@ -21,13 +21,13 @@ block content
                         h5.card-title=product.id  + ": " + product.name
                         p.card-text=product.description
                         a.btn.btn-primary(href='/cart/add/' + product.id) Add to Cart
-        nav(aria-label='Page navigation example' class="text-center")
-            ul.pagination.justify-content-center
-                li.page-item
-                a.page-link(href=pageCurrent? 'products?page=' + (pageCurrent - 1) : '#' ) Previous
-                each n in nPage
-                    li.page-item
-                        a.page-link(href='products?page=' + (nPage.indexOf(n) + 1))=nPage.indexOf(n) + 1
-                            span.sr-only (current)
-                li.page-item
-                a.page-link(href=pageCurrent ? 'products?page=' + (pageCurrent + 1) : 'products?page=2') Next
+        //- nav(aria-label='Page navigation example' class="text-center")
+        //-     ul.pagination.justify-content-center
+        //-         li.page-item
+        //-         a.page-link(href=pageCurrent? 'products?page=' + (pageCurrent - 1) : '#' ) Previous
+        //-         each n in nPage
+        //-             li.page-item
+        //-                 a.page-link(href='products?page=' + (nPage.indexOf(n) + 1))=nPage.indexOf(n) + 1
+        //-                     span.sr-only (current)
+        //-         li.page-item
+        //-         a.page-link(href=pageCurrent ? 'products?page=' + (pageCurrent + 1) : 'products?page=2') Next
