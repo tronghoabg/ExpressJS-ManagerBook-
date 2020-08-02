@@ -14,11 +14,11 @@ module.exports = function(req, res, next) {
 }
 module.exports.checkCart = function(req, res, next) {
     var sessionId = req.signedCookies.sessionId;
-    var cart = db.get('sessions')
-                 .find({id: sessionId})
-                 .value();
-    if(cart.cart) {
-        res.locals.cart = Object.keys(cart.cart).length;
-    }
+    // var cart = db.get('sessions')
+    //              .find({id: sessionId})
+    //              .value();
+    // if(cart.cart) {
+    //     res.locals.cart = Object.keys(cart.cart).length;
+    // }
     next();
 }
